@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.svg" type="image/svg" sizes="16x16">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>FinaGuru</title>
+</head>
+
+<body class="body">
+    <header>
+        <div class="wrapper">
+            <div class="logotype">
+                <a href="#">
+                    <img src="img/logo.svg" alt="finaguru">
+                    <span class="logoTextBlack">fina</span>
+                    <span class="logoTextGreen">guru</span>
+                </a>
+            </div>
+            <div class="navigationFlex">
+                <ul class="headerNavigation">
+                    <li>
+                        <a href="index.html" style="font-weight: 700;">Головна</a>
+                    </li>
+                    <li>
+                        <a href="conditions.html">Умови</a>
+                    </li>
+                    <li>
+                        <a href="questions.html">Питання та відповіді</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Блог</a>
+                    </li>
+                </ul>
+                <button class="registrationBtn">Реєстрація</button>
+            </div>
+            <div class="openBurger">
+                <img src="img/burger.svg" alt="burger">
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="wrapper">
+            <div class="bannerLeft">
+                <h1>Кредит онлайн на картку</h1>
+                <p>До 15 000 грн під 0,01% на день</p>
+            </div>
+            <div class="bannerRight" id="fields">
+                <img src="img/bunnerMobile.png" alt="finaguru" class="bannerMobileImg">
+                <div class="parallax">
+                    <div id="c1" class="image"><img src="img/bannerImg.png" alt="finaguru" /></div>
+                    <div id="c2" class="image"><img src="img/bannerSroll.png" alt="finaguru" /></div>
+                </div>
+
+                <form action="pay.php" method="POST" class="calcResult">
+
+                    <div class="rangeSliderRightContainer">
+                        <div class="sliderMoney">
+                            <div class="sliderContainerText">
+                                <p>Сума позики</p>
+                                <div id="innerMoney">0</div>
+                            </div>
+                            <div class="innerBorder">
+                                <p>від 500,00 грн.</p>
+                                <p>до 15 000,00 грн.</p>
+                            </div>
+                            <input type="range" id="valueMoney" name="valueMoney" min="500" max="15000" value="0"
+                                step="100" oninput="rangeMoney()">
+                        </div>
+                        <div class="sliderDate">
+                            <div class="sliderContainerText">
+                                <p>Срок платежу</p>
+                                <div id="innerDate">0</div>
+                            </div>
+                            <div class="innerBorder">
+                                <p>від 2 днів</p>
+                                <p>до 30 днів</p>
+                            </div>
+                            <input type="range" id="valueDate" name="valueDate" min="2" max="30" value="0"
+                                oninput="rangeMoney()">
+                        </div>
+                    </div>
+
+                    <input type="submit" class="calcResultBtn" value="Отримати гроші">
+                    <a href="#" class="promo">Є промокод?</a>
+                    <div class="containerCalc">
+                        <div class="calcResultProcent">
+                            <p>Бажана сумма:</p>
+                            <div class="calcFlex">
+                                <p id="resultSum"></p>
+                                <p class="redText">2 277 грн.</p>
+                            </div>
+                        </div>
+                        <div class="calcResultProcent">
+                            <p>Відсотки:</p>
+                            <p id="resultPercent"></p>
+                            <!--<input type="text" id="percent" name="percent" value="" /> -->
+                        </div>
+                        <div class="calcResultProcent">
+                            <p>Дата оплати:</p>
+                            <p id="resultDate"></p>
+                        </div>
+                        <div class="calcResultProcent">
+                            <p>Сумма до повернення:</p>
+                            <p id="resultCalc" class="bols"></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="close">
+            <svg width="34" height="22" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                    fill="#222222" />
+            </svg>
+        </div>
+        <ul class="headerNavigationBurger">
+            <li>
+                <a href="index.html" style="font-weight: 700;">Головна</a>
+            </li>
+            <li>
+                <a href="conditions.html">Умови</a>
+            </li>
+            <li>
+                <a href="questions.html">Питання та відповіді</a>
+            </li>
+            <li>
+                <a href="blog.html">Блог</a>
+            </li>
+        </ul>
+        <button class="registrationBtn">Реєстрація</button>
+    </div>
+    <div class="work">
+        <div class="wrapper">
+            <div class="workTop">
+                <div class="workTopSection">
+                    <img src="img/workIcon1.png" alt="">
+                    <h3>Зручно</h3>
+                    <p>Приймаємо і обробляємо заявки
+                        на кредит за 10 хв цілодобово навіть
+                        у святкові дні.</p>
+                </div>
+                <div class="workTopSection">
+                    <img src="img/workIcon2.png" alt="">
+                    <h3>Конфіденційно</h3>
+                    <p>Всі особисті дані знаходяться під надійним захистом і конфіденційністю.</p>
+                </div>
+                <div class="workTopSection">
+                    <img src="img/workIcon3.png" alt="">
+                    <h3>Будь-який банк</h3>
+                    <p>Зарахування грошей на картку
+                        будь-якого банку.</p>
+                </div>
+            </div>
+            <div class="workCenter">
+                <img src="img/workImg.png" alt="" class="displayImg">
+                <img src="img/creditProduct.png" alt="" class="mobileImg">
+            </div>
+            <div class="workBottom">
+                <h2>Як це працює?</h2>
+                <div class="workBottomContainer">
+                    <div class="workBottomSection">
+                        <img src="img/number1.png" alt="1">
+                        <div class="workBottomSectionRight">
+                            <h3>Заповніть заявку</h3>
+                            <p>Виберіть необхідну вам суму
+                                і вкажіть термін кредиту.</p>
+                        </div>
+                    </div>
+                    <div class="workBottomSection">
+                        <img src="img/number2.png" alt="2">
+                        <div class="workBottomSectionRight">
+                            <h3>Дочекайтеся рішення</h3>
+                            <p>Зареєструйтеся та очікуйте
+                                на рішення щодо заявки.</p>
+                        </div>
+                    </div>
+                    <div class="workBottomSection">
+                        <img src="img/number3.png" alt="3">
+                        <div class="workBottomSectionRight">
+                            <h3>Отримайте гроші</h3>
+                            <p>Підпишіть договір за допомогою SMS-коду, і відразу ж отримаєте гроші на картку</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="wrapper">
+            <div class="reviews">
+                <div class="reviewsTop">
+                    <h2>Відгуки наших клієнтів</h2>
+                    <button class="open-popup">Залишити відгук</button>
+                </div>
+                <div class="SliderPrev">
+                    <img src="img/arrowSlider.svg" alt="Arrow">
+                </div>
+                <div class="SliderNext">
+                    <img src="img/arrowSlider.svg" alt="Arrow">
+                </div>
+                <div class="reviewsSlider">
+                    <div class="reviewsItem">
+                        <div class="reviewsItemAvatarContainer">
+                            <div class="reviewsItemAvatar">
+                                <img src="img/avatar1.png" alt="Ілона Тумаян">
+                            </div>
+                            <div class="reviewsItemTextContainer">
+                                <p>Ілона Тумаян</p>
+                                <div class="reviewsItemAvatarText">
+                                    <p>20.10.2022</p>
+                                    <p>Кривий Ріг</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Вперше за мій досвід компанія має таке відношення до своїх клієнтів. Сказати, що це нормальна
+                            компанія - це нічого не сказати. Все проходить швидко та якісно. Захотіла поділитись
+                            досвідом</p>
+                    </div>
+
+                    <div class="reviewsItem">
+                        <div class="reviewsItemAvatarContainer">
+                            <div class="reviewsItemAvatar">
+                                <img src="img/avatar2.png" alt="Віталій Лисенко">
+                            </div>
+                            <div class="reviewsItemTextContainer">
+                                <p>Віталій Лисенко</p>
+                                <div class="reviewsItemAvatarText">
+                                    <p>20.10.2022</p>
+                                    <p>Миколаїв</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Хворів, треба були кошти. Оформив позику на карту не виходячи з дому. Зручно. Дякую, що
+                            виручили.</p>
+                    </div>
+
+                    <div class="reviewsItem">
+                        <div class="reviewsItemAvatarContainer">
+                            <div class="reviewsItemAvatar">
+                                <img src="img/avatar1.png" alt="Ольга Сулей">
+                            </div>
+                            <div class="reviewsItemTextContainer">
+                                <p>Ольга Сулей</p>
+                                <div class="reviewsItemAvatarText">
+                                    <p>20.10.2022</p>
+                                    <p>Лубни</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Вже вдруге оформлюю тут позику. Задоволена сервісом, швидко заповнила заявку і отримала гроші
+                            на карту. Головне оплачувати вчасно.</p>
+                    </div>
+
+                    <div class="reviewsItem">
+                        <div class="reviewsItemAvatarContainer">
+                            <div class="reviewsItemAvatar">
+                                <img src="img/avatar1.png" alt="Ілона Тумаян">
+                            </div>
+                            <div class="reviewsItemTextContainer">
+                                <p>Ілона Тумаян</p>
+                                <div class="reviewsItemAvatarText">
+                                    <p>20.10.2022</p>
+                                    <p>Кривий Ріг</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Вперше за мій досвід компанія має таке відношення до своїх клієнтів. Сказати, що це нормальна
+                            компанія - це нічого не сказати. Все проходить швидко та якісно. Захотіла поділитись
+                            досвідом</p>
+                    </div>
+
+                    <div class="reviewsItem">
+                        <div class="reviewsItemAvatarContainer">
+                            <div class="reviewsItemAvatar">
+                                <img src="img/avatar1.png" alt="Ілона Тумаян">
+                            </div>
+                            <div class="reviewsItemTextContainer">
+                                <p>Ілона Тумаян</p>
+                                <div class="reviewsItemAvatarText">
+                                    <p>20.10.2022</p>
+                                    <p>Кривий Ріг</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Вперше за мій досвід компанія має таке відношення до своїх клієнтів. Сказати, що це нормальна
+                            компанія - це нічого не сказати. Все проходить швидко та якісно. Захотіла поділитись
+                            досвідом</p>
+                    </div>
+                </div>
+                <div class="SliderDots"></div>
+                <button class="reviewsBtnMobile open-popup">Залишити відгук</button>
+            </div>
+            <div class="partners">
+                <h2>Наші партнери</h2>
+                <div class="partnersSlider">
+                    <div class="partnersSliderItem">
+                        <img src="img/partner1.png" alt="Українське бюро кредитних історій">
+                    </div>
+
+                    <div class="partnersSliderItem">
+                        <img src="img/partner2.png" alt="Bank ID">
+                    </div>
+
+                    <div class="partnersSliderItem">
+                        <img src="img/partner3.png" alt="Visa">
+                    </div>
+
+                    <div class="partnersSliderItem">
+                        <img src="img/partner4.png" alt="PCI DSS compliant">
+                    </div>
+
+                    <div class="partnersSliderItem">
+                        <img src="img/partner5.png" alt="Comodo">
+                    </div>
+
+                    <div class="partnersSliderItem">
+                        <img src="img/partner6.png" alt="Easy pay">
+                    </div>
+
+                    <div class="partnersSliderItem">
+                        <img src="img/partner7.png" alt="Київстар">
+                    </div>
+                </div>
+                <div class="partnersSliderDots"></div>
+            </div>
+            <div class="conditions">
+                <h2>Умови кредитного продукту</h2>
+                <div class="conditionsContent">
+                    <div class="conditionsContentSectionTittle">
+                        <p>Тип кредиту</p>
+                        <p>Перший кредит</p>
+                        <p>Повторний кредит</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Сума</p>
+                        <p>Стандартна — 1,99% на день (726,35% річних). Якщо Споживачем будуть виконані умови договору
+                            та програми лояльності, ставка на перший період (від 3 до 30 днів, залежить від погоджених
+                            сторонами умов) може бути знижена та складати — 0,01% на день (3,65% річних).Реальна річна
+                            процентна ставка — від 6961,93% до 115757,37% (залежить від виконання умов);</p>
+                        <p>Стандартна — 1,99% на день (726,35% річних). Ставка на перший період може бути знижена до
+                            0,019% на день (7,5106% річних), якщо споживач є учасником <span class="spans">програми
+                                лояльності</span>. Реальна річна процентна ставка — від 7004,32% до 115757,37% (залежить
+                            від умов участі в програмі лояльності).</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Час розгляду заявки</p>
+                        <p>До 15 хвилин</p>
+                        <p>До 5 хвилин</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Строк</p>
+                        <p style="width: 100%; min-width: 50%; text-align: center; max-width: 100%;">Строк кредиту від
+                            345 до 365 днів (залежить від погодженої сторонами періодичності сплати процентів).
+                            Періодичність сплати процентів — від 3 до 30 днів (обирає споживач)</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Вік позичальника</p>
+                        <p>Від 18 до 65 років</p>
+                        <p>Від 18 до 70 років</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Способи отримання кредиту</p>
+                        <p>Оформлення кредиту відбувається в онлайн-режимі</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Необхідне для оформлення онлайн-кредиту</p>
+                        <p>Паспорт, ІПН (РНОКПП), дійсна платіжна картка, видана на ваше ім'я, мобільний телефон</p>
+                        <p>Дійсна платіжна картка, видана на ваше ім'я, та мобільний телефон. Під час оформлення
+                            повторного кредиту надавати документи не потрібно</p>
+                    </div>
+                    <div class="conditionsContentSection">
+                        <p>Переваги</p>
+                        <p>Кредит видається зі зниженою процентною ставкою. Оформлення в той самий день</p>
+                        <p>Під час повторного звернення не потрібно проходити реєстрацію. Рішення буде відомо за кілька
+                            хвилин</p>
+                    </div>
+                </div>
+                <img src="img/creditProduct.png" alt="finaguru" class="conditionsPosition">
+            </div>
+        </div>
+        <div class="popup__bg">
+            <div class="popup">
+                <svg class="close-popup" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                        fill="#222222" />
+                </svg>
+                <div class="popupContainer">
+                    <h3>Додайте свій відгук</h3>
+                    <form action="">
+                        <input type="text" name="" id="" placeholder="Ім’я">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Відгук"></textarea>
+                        <input type="submit" value="Відгук">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="showContainer">
+            <div class="showContainerSection">
+                <svg onclick="svgClose()" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+                        fill="#222222" />
+                </svg>
+                <div class="showContent">
+                    <div class="showContentLeft">
+                        <h3>Беріть кредит</h3>
+                        <p>вигравайте дрон <br> або айфон!</p>
+                        <button>Детальніше</button>
+                    </div>
+                    <img src="img/show.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="credit">
+        <div class="wrapper">
+            <h2>Кредит онлайн на карту в Україні від Fina<span>Guru</span></h2>
+            <div class="creditContent">
+                <p>В умовах непростої фінансової ситуації в країні, взяти кредит в банку досить непросто. Для отримання
+                    онлайн кредиту доведеться зібрати цілий пакет документів, включаючи довідку про доходи позичальника.
+                    У тому випадку, якщо у клієнта немає стабільної офіційної роботи, тобто, він офіційно не
+                    працевлаштований, отримати подібну довідку не представляється можливим. Та й «морочитися» заради
+                    кредиту в кілька тисяч гривень мало хто захоче. Нішу, що утворилася швидко зайняли МФО –
+                    мікрофінансові організації, які спеціалізуються на видачі короткострокових мікрокредитів населенню
+                    на спрощених умовах.</p>
+                <h3>Як оформити кредит онлайн на карту в Україні?</h3>
+                <p>Оформити кредит на карту в МФО не представляє ніякої складності. Брати кредит в МФО можуть особи, які
+                    досягли вісімнадцятирічного віку, отримали паспорт, мають банківську карту і мобільний телефон.</p>
+                <p>Для того, щоб взяти гроші в кредит в МФО зовсім не обов’язково відвідувати офіс контори. Кредитування
+                    можна здійснити в віддаленому онлайн режимі в будь-який час дня і ночі, в будь-який день. Для цього
+                    треба відвідати сайт МФО, пройти нескладну реєстрацію, заповнити анкету, і заявку в якій повинна
+                    бути вказана сума кредиту і термін кредитування.</p>
+                <p>Заявка клієнта буде оброблена в автоматичному режимі, перевірена в бюро кредитний умов, і протягом
+                    15-20 хвилин по даній заявці буде винесено рішення. У тому випадку, якщо інтернет кредит буде
+                    схвалений, клієнт отримає кредит на картку протягом 1 години або раніше.</p>
+                <h3>Де можна оформити мікрокредит?</h3>
+                <p>Мікрокредит можна оформити в різних МФО. В даний час на ринку короткострокового кредитування працюють
+                    кілька сотень різних організацій. Вибрати серед такого великого розмаїття найкращий варіант досить
+                    непросто.</p>
+                <p>У кожній з цих організацій можна оформити позик протягом 10-60 хвилин на термін від 91 дня на суму
+                    5-20 тисяч грн. Багато МФО першу позику оформляють під 0,01%, і клієнтові доводиться фактично
+                    повертати тільки тіло кредиту, з символічними відсотками. При наступних кредитах доведеться платити
+                    1,5-2% в день від взятої суми позик.</p>
+                <h3>Як оформити мікрокредит в Finaguru?</h3>
+                <p>Одні з найбільш вигідних умов мікрокредитування представлені в МФО Finaguru. Тут можна оформити
+                    мікрокредит протягом 15 хвилин на суму до 20 тисяч гривень і на строк до 30 днів. Для цього
+                    необхідно відвідати офіційний сайт організації Finaguru.com.ua, пройти нескладну процедуру
+                    реєстрації на сайті, вказати свої контактні дані, заповнити заявку, і дочекатися рішення по ній.</p>
+                <p>Отриманий кредит необхідно погасити в термін, якщо цього не зробити, на позичальника будуть накладені
+                    штрафні санкції, за кожний день прострочення буде нараховуватися пеня, а сам розмір штрафу може
+                    досягати половини суми взятого кредиту.</p>
+                <p>На час дії воєнного стану та в тридцятиденний строк після дня його припинення або скасування споживач
+                    не буде нести відповідальності перед кредитодавцем у разі прострочення виконання зобов’язань за
+                    споживчим кредитом. У разі допущення такого прострочення споживач звільняється, зокрема, від
+                    обов’язку сплати кредитодавцю неустойки (штрафу, пені) та інших платежів, сплата яких передбачена
+                    договором про споживчий кредит за прострочення виконання (невиконання, часткове виконання)
+                    споживачем зобов’язань за таким договором.</p>
+                <h3>Чи варто користуватися послугами МФО?</h3>
+                <p>Взяти кредит в МФО може практично будь-який бажаючий громадянин України, який має паспорт, довідку
+                    про присвоєння ІПН, телефон і банківську карту. Порядку 90% заявок, оформлюваних в МФО, схвалюються
+                    і по ним видаються кредити. Зрозуміло, що досить велика частина таких мікропозик виявляються
+                    проблемними. Адміністрації МФО борються зі злісними неплатниками, боротьба ця непроста, не завжди
+                    закінчується успіхом. Тому, від високих ризиків МФО страхується драконівськими відсотками.</p>
+                <p>Якщо потрібні гроші на більш тривалий термін, варто розглянути питання кредитування в класичному
+                    банку. Однак, це не завжди можливо, оскільки відсоток відмови банків за кредитними заявками іноді
+                    досягає 50%. Банки дуже ретельно перевіряють платоспроможність позичальника, і якщо вона викликає
+                    підозри, в кредитуванні буде відмовлено. Тому, найчастіше МФО є єдиним джерелом отримання грошей у
+                    борг.</p>
+                <h3>Що робити, якщо не виходить повернути кредит вчасно?</h3>
+                <p>Перш, ніж оформляти кредит в МФО, слід ретельно зважити свої фінансові можливості, і уважно вивчити
+                    Правила і умови мікрокредитування в конкретній організації. Багато МФО дають можливість
+                    неодноразової пролонгації взятого мікропозик з умовою погашення поточних відсотків. Звичайно, це не
+                    вирішує в корені проблему, але дає час, щоб вирішити свої фінансові проблеми. У деяких випадках МФО
+                    йде назустріч позичальникові і дає можливість перекредитування взятого раніше позики. Якщо клієнт не
+                    впевнений в своїх фінаносових можливості, він повинен підбирати відповідну організацію, в якій можна
+                    буде вирішити «полюбовно» питання несвоєчасного погашення взятого позики.</p>
+                <h3>Яка ставка по кредиту?</h3>
+                <p>Сьогодні ставка по кредитуванню складає всього 0,01 %/день.</p>
+                <h3>Висновок</h3>
+                <p>МФО є зручною альтернативою банківському кредитуванню. У МФО можна швидко оформити невеликий
+                    мікрокредит, надавши лише мінімальний набір документів. Кредитуватися можуть соціально незахищені
+                    верстви населення. За всі ці зручності доводиться платити дуже високою процентною ставкою за
+                    кредитом.</p>
+            </div>
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="wrapper">
+
+            <div class="bannerRight calculatorContainer" id="fields">
+                <form action="pay.php" method="POST" class="calcResult">
+
+                    <div class="rangeSliderRightContainer">
+                        <div class="sliderMoney">
+                            <div class="sliderContainerText">
+                                <p>Сума позики</p>
+                                <div id="innerMoney2">0</div>
+                            </div>
+                            <div class="innerBorder">
+                                <p>від 500,00 грн.</p>
+                                <p>до 15 000,00 грн.</p>
+                            </div>
+                            <input name="valueMoney" type="range" id="valueMoney2" min="500" max="15000" value="0" step="100"
+                                oninput="rangeMoney2()">
+                        </div>
+                        <div class="sliderDate">
+                            <div class="sliderContainerText">
+                                <p>Срок платежу</p>
+                                <div id="innerDate2">0</div>
+                            </div>
+                            <div class="innerBorder">
+                                <p>від 2 днів</p>
+                                <p>до 30 днів</p>
+                            </div>
+                            <input name="valueDate" type="range" id="valueDate2" min="2" max="30" value="0" oninput="rangeMoney2()">
+                        </div>
+                    </div>
+
+                    <input type="submit" class="calcResultBtn" value="Отримати гроші">
+                    <a href="#" class="promo">Є промокод?</a>
+                    <div class="containerCalc">
+                        <div class="calcResultProcent">
+                            <p>Бажана сумма:</p>
+                            <div class="calcFlex">
+                                <p id="resultSum2"></p>
+                                <p class="redText">2 277 грн.</p>
+                            </div>
+                        </div>
+                        <div class="calcResultProcent">
+                            <p>Відсотки:</p>
+                            <p id="resultPercent2"></p>
+                        </div>
+                        <div class="calcResultProcent">
+                            <p>Дата оплати:</p>
+                            <p id="resultDate2"></p>
+                        </div>
+                        <div class="calcResultProcent">
+                            <p>Сумма до повернення:</p>
+                            <p id="resultCalc2" class="bols"></p>
+                        </div>
+                    </div>
+                </form>
+            </div><!-- //calculatorContainer -->
+
+            <div class="calculatorRight">
+                <img src="img/credit.png" alt="">
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="services">
+                <h2>Послуги кредитування</h2>
+                <div class="servicesContent">
+                    <a href="#">Швидкий кредит</a>
+                    <a href="#">Кредит без відмови</a>
+                    <a href="#">Мікрозайм</a>
+                    <a href="#">Кредит 24/7</a>
+                    <a href="#">Кредит з поганою кредитною історією</a>
+                    <a href="#">Кредит з 18 років</a>
+                    <a href="#">Без офіційного працевлаштування</a>
+                    <a href="#">Без поручителів</a>
+                    <a href="#">Безробітним</a>
+                    <a href="#">Пенсіонерам</a>
+                    <a href="#">Без перевірки кредитної історії</a>
+                    <a href="#">Студентам</a>
+                    <a href="#">За паспортом</a>
+                    <a href="#">Кредит онлайн на картку ПриватБанку</a>
+                    <a href="#">Позика онлайн</a>
+                    <a href="#">Гроші в борг</a>
+                    <a href="#">Через інтернет</a>
+                    <a href="#">Гроші до зарплати</a>
+                    <a href="#">Без довідки про доходи</a>
+                </div>
+            </div>
+        </div>
+        <div class="calculatorTel">
+            <a href="tel:0800753363">
+                <img src="img/phone.svg" alt="tel">
+            </a>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footerTop">
+                <div class="logotype">
+                    <a href="#">
+                        <img src="img/logo.svg" alt="finaguru">
+                        <span class="logoTextBlack">fina</span>
+                        <span class="logoTextGreen">guru</span>
+                    </a>
+                </div>
+                <div class="footerTopContainer">
+                    <ul>
+                        <li>
+                            <a href="index.html" style="font-weight: 700;">Головна</a>
+                        </li>
+                        <li>
+                            <a href="questions.html">Питання та відповіді</a>
+                        </li>
+                        <li>
+                            <a href="conditions.html">Умови</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Блог</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="tel:0800753363">
+                                <img src="img/phone.svg" alt="0 800 753 363">
+                                0 800 753 363
+                            </a>
+                        </li>
+                        <li>
+                            <img src="img/time.svg" alt="24/7">
+                            24/7
+                        </li>
+                        <li>
+                            <a href="mailto:info@finaguru.ua">
+                                <img src="img/mail.svg" alt="info@finaguru.ua">
+                                info@finaguru.ua
+                            </a>
+                        </li>
+                        <li>
+                            <img src="img/location.svg" alt="02040 м. Київ, вул Глибочицька 1">
+                            02040 м. Київ, вул Глибочицька 1
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerCenter">
+                <div class="footerCenterText">
+                    <p>Сайт не надає платні послуги з кредитних продуктів для клієнтів, а саме пропонує клієнту список
+                        пропозицій кредитних установ, некредитних фінансових організацій, до яких клієнт може звернутися
+                        для оформлення заявки на кредитний продукт. Проект не є банком або кредитором, не належить до
+                        фінансових установ та не несе відповідальності за наслідки будь-яких укладених договорів
+                        кредитування або поруку перед ним. Мінімальна процентна ставка у деяких партнерів складає 0.01%.
+                        Для оформлення заявки на отримання позики необхідно заповнити анкету на сайті проекту.
+                        Здійснюючи будь-які дії на сайті, ви повинні надати свою Згоду на обробку персональних даних та
+                        Згоду на отримання рекламних матеріалів. Ви ознайомилися та згодні з Договором публічної оферти.
+                    </p>
+                </div>
+                <div class="footerCenterText">
+                    <h3>Вимоги до позичальника</h3>
+                    <p>Наявність громадянства України (потрібен паспорт громадянина). Необхідно, щоб позичальникові було
+                        як мінімум 18 повних років. Кредитна історія не враховується при наданні позики.</p>
+                    <h3>Умови отримання позики</h3>
+                    <p>Термін погашення і відсоткові ставки. Відсоток за користування позикою (відсоткова ставка)
+                        знаходиться в межах від 1 до 31 відсотків річних. Якщо відбувається порушення термінів виплати,
+                        то нараховується неустійка, розмір якої дорівнює приблизно 0,1% від суми прострочення в день.
+                        Всі кредити, які представлені на сайті видаються на термін від 91 до 365 днів.</p>
+                </div>
+                <div class="footerCenterText">
+                    <h3>Інформація про повну вартість кредиту та Приклад розрахунку</h3>
+                    <p>Якщо ви взяли кредит на суму 1000 гривень на 91 день і більше з процентною ставкою 0,01% в день,
+                        то плата за користування засобами складе 0,01% в день, тобто 0,1 грн в день. Виходить ви
+                        повертаєте суму відсотків рівну 9 грн, тобто 0.1 грн * 91 днів. А також суму кредиту рівну 1 000
+                        грн. Таким чином, загальна сума повернення складається з суми кредиту 1 000 і суми нарахованих
+                        відсотків за 91 дн. 9 грн і дорівнює 1091 грн. Мінімальний і максимальний період погашення боргу
+                        становить від 91 днів, до 365 днів. Максимальна річна відсоткова ставка, що включає позичковий
+                        відсоток, а також всі інші комісії і витрати за рік, або аналогічна ставка, розрахована
+                        відповідно до місцевого законодавства становить 31% річних."</p>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <a href="police.html">Політика конфіденційності</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="srcipt/slick.js"></script>
+    <script src="srcipt/slider.js"></script>
+    <script src="srcipt/burger.js"></script>
+    <script src="srcipt/range-slider.js"></script>
+    <script src="srcipt/banerAnimation.js"></script>
+    <script src="srcipt/popup.js"></script>
+    <script src="srcipt/sliderPartners.js"></script>
+    <script src="srcipt/accardin.js"></script>
+    <script src="srcipt/animation.js"></script>
+    <script src="srcipt/calculator.js"></script>
+</body>
+
+</html>
